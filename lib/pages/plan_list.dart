@@ -19,21 +19,21 @@ class _PlanListState extends State<PlanList> {
       padding: EdgeInsets.symmetric(horizontal: 32, vertical: 50),
       child: Column(
         children: [
-          planCard(0),
+          planCard(0, 'Weekly', 'Good for learn', '\$5'),
           SizedBox(
             height: 10,
           ),
-          planCard(1),
+          planCard(1, 'Mountly', 'Good for starting up', '\$5'),
           SizedBox(
             height: 10,
           ),
-          planCard(2),
+          planCard(2, 'Yearly', 'Steady company', '\$5'),
         ],
       ),
     );
   }
 
-  Widget planCard(int index) {
+  Widget planCard(int index, String titles, String subtitle, String price) {
     return GestureDetector(
       onTap: () {
         setState(() {
@@ -56,6 +56,18 @@ class _PlanListState extends State<PlanList> {
                   'assets/images/check.png',
                   width: 18,
                 ),
+          title: Text(
+            titles,
+            style: bodytitle,
+          ),
+          subtitle: Text(
+            subtitle,
+            style: body.copyWith(color: whitecolor, fontSize: 12),
+          ),
+          trailing: Text(
+            price,
+            style: title.copyWith(fontSize: 18),
+          ),
         ),
       ),
     );
