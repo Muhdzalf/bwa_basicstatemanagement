@@ -1,3 +1,4 @@
+import 'package:bwa_basicstatemanagement/pages/plan_list.dart';
 import 'package:bwa_basicstatemanagement/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -29,7 +30,8 @@ class HomePage extends StatelessWidget {
               'Go unlock all features and\nbuild your own bussines bigger',
               style: body,
               textAlign: TextAlign.center,
-            )
+            ),
+            PlanList()
           ],
         ),
       ),
