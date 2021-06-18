@@ -8,7 +8,31 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: navycolor,
-      body: Container(),
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 53),
+              child: Image.asset('assets/images/goal.png'),
+            ),
+            RichText(
+              text: TextSpan(text: 'Upgrade to ', style: title, children: [
+                TextSpan(text: 'Pro', style: title.copyWith(color: bluecolor)),
+              ]),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            Text(
+              'Go unlock all features and\nbuild your own bussines bigger',
+              style: body,
+              textAlign: TextAlign.center,
+            )
+          ],
+        ),
+      ),
     );
   }
 }
