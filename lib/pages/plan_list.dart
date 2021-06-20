@@ -28,6 +28,20 @@ class _PlanListState extends State<PlanList> {
             height: 10,
           ),
           planCard(2, 'Yearly', 'Steady company', '\$5'),
+          SizedBox(
+            height: 16,
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: Text(
+              'Checkout Now',
+              style: title.copyWith(fontSize: 16),
+            ),
+            style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.symmetric(vertical: 11),
+                minimumSize: Size(double.infinity, 50),
+                shape: StadiumBorder()),
+          )
         ],
       ),
     );
