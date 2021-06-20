@@ -60,28 +60,50 @@ class _PlanListState extends State<PlanList> {
             border: Border.all(
                 width: 2,
                 color: selectedIndex == index ? bluecolor : textcolor)),
-        child: ListTile(
-          leading: selectedIndex == index
-              ? Image.asset(
-                  'assets/images/checked.png',
-                  width: 18,
-                )
-              : Image.asset(
-                  'assets/images/check.png',
-                  width: 18,
+        child: Row(
+          children: [
+            Expanded(
+                flex: 1,
+                child: selectedIndex == index
+                    ? Container(
+                        child: Image.asset(
+                          'assets/images/checked.png',
+                          height: 18,
+                        ),
+                      )
+                    : Container(
+                        child: Image.asset(
+                          'assets/images/check.png',
+                          height: 18,
+                        ),
+                      )),
+            Expanded(
+              flex: 4,
+              child: ListTile(
+                // leading: selectedIndex == index
+                //     ? Image.asset(
+                //         'assets/images/checked.png',
+                //         width: 18,
+                //       )
+                //     : Image.asset(
+                //         'assets/images/check.png',
+                //         width: 18,
+                //       ),
+                title: Text(
+                  titles,
+                  style: bodytitle,
                 ),
-          title: Text(
-            titles,
-            style: bodytitle,
-          ),
-          subtitle: Text(
-            subtitle,
-            style: body.copyWith(color: whitecolor, fontSize: 12),
-          ),
-          trailing: Text(
-            price,
-            style: title.copyWith(fontSize: 18),
-          ),
+                subtitle: Text(
+                  subtitle,
+                  style: body.copyWith(color: whitecolor, fontSize: 12),
+                ),
+                trailing: Text(
+                  price,
+                  style: title.copyWith(fontSize: 18),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
