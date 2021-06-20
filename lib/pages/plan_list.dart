@@ -31,19 +31,23 @@ class _PlanListState extends State<PlanList> {
           SizedBox(
             height: 16,
           ),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text(
-              'Checkout Now',
-              style: title.copyWith(fontSize: 16),
-            ),
-            style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(vertical: 11),
-                minimumSize: Size(double.infinity, 50),
-                shape: StadiumBorder()),
-          )
+          selectedIndex == -1 ? SizedBox() : checkoutButton(),
         ],
       ),
+    );
+  }
+
+  ElevatedButton checkoutButton() {
+    return ElevatedButton(
+      onPressed: () {},
+      child: Text(
+        'Checkout Now',
+        style: title.copyWith(fontSize: 16),
+      ),
+      style: ElevatedButton.styleFrom(
+          padding: EdgeInsets.symmetric(vertical: 11),
+          minimumSize: Size(double.infinity, 50),
+          shape: StadiumBorder()),
     );
   }
 
